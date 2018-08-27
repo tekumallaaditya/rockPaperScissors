@@ -87,8 +87,8 @@ function roundCount(){
         console.log('inside the roundCount function');
         //$('#roundLabel').hide();
         if (playerScore > compScore){
-            var curName = window.localStorage.getItem('name');
-            $('#roundLabel').text( curName + ' is the winner');
+            //var curName = window.localStorage.getItem('name');
+            $('#roundLabel').text( playerName + ' is the winner');
             $('button#rock').attr('disabled', 'disabled');
             $('button#paper').attr('disabled', 'disabled');
             $('button#scissors').attr('disabled', 'disabled');
