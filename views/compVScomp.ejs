@@ -1,0 +1,55 @@
+<html>
+    <head>
+            <% include partials/head.ejs %>
+        <script src="/js/second.js"></script>
+    </head>
+    <body onload="needRight()">
+        <div class="continer" >
+            <br><br><br><br><br><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="jumbotron leftSide">
+                        <h4 align="center">Comp 1</h4><br>
+                        <img id="minion" src="/images/comp.gif">
+                        <img align="right" id="option"><br><br>                         
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron centerSide">
+                        <div>
+                            <h3 align="center">Final Score</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Comp 1</th>
+                                        <th>Comp 2</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="compScore1"></td>
+                                        <td id="compScore2"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="roundLabel" style="display: none" align="center" >Round:<p id="roundNumber"></p></div>
+                            <form action="/goToHome" method="post">
+                                <button  id="replay" class="btn btn-danger" style="display: none">Replay</button>
+                            </form>                            
+                            <button id="startGame" type="button" class="btn btn-success" style="display: none">Start</button>
+                        </div>                       
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron rightSide">
+                        <h4 align="center">Comp 2</h4><br>
+                        <img  id="optionComp">
+                        <img align="right" id="minion" src="/images/comp.gif"><br><br><br>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

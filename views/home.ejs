@@ -1,0 +1,24 @@
+<html>
+    <head>
+            <% include partials/head.ejs %>
+
+    </head>
+    <body>
+        <div class="container">                    
+            <div class="jumbotron main">
+                <h1 align="center">Rock, Paper, Scissors</h1> 
+                <img src="/images/homePic.jpg" id="homeImg">
+                <br><br>
+                <form method="post" action="/getName" class="col-md-8">
+                    <p class="input-group">
+                        <button id="youVsComputer" class="btn btn-info" > you vs Computer</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <input type="text" required id="playerNameInput" placeholder="enter your Name" name="playerName">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    </p>                     
+                </form>
+                <form action="/gotoCompVsComp" method="post">
+                    <button id="compVsComp" class="btn btn-info" >Computer VS Computer</button> 
+                </form>                           
+            </div>
+        </div>        
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+            <% include partials/head.ejs %>
+    </head>
+    <body>       
+            <br><br><br><br><br><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="jumbotron leftSide">
+                        <h4 align="center" id="yourName"><%= name %></h4><br>
+                        <img id="minion" src="/images/player.gif">
+                        <img align="right" id="option"><br><br>
+                        <button type="button" id="rock" class="btn btn-info" onclick="rock()">Rock</button>
+                        <button type="button" id="paper" class="btn btn-info" onclick="paper()">Paper</button>
+                        <button type="button" id="scissors" class="btn btn-info" onclick="scissors()">Scissors</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron centerSide">
+                        <div>
+                            <h3 align="center">Final Score</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th id="yourScore"><%= name %></th>
+                                        <th>Comp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="playerScore"></td>
+                                        <td id="compScore"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="roundLabel" style="display: none" align="center" >Round:<p id="roundNumber"></p></div>
+                            <form  method="post" action="/goToHome">
+                                <button  id="replay" class="btn btn-danger" style="display: none">Replay</button>
+                            </form>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron rightSide">
+                        <h4 align="center">Comp</h4><br>
+                        <img  id="optionComp">
+                        <img align="right" id="minion" src="/images/comp.gif"><br><br><br>                        
+                    </div>
+                </div>
+            </div>      
+        
+    </body>
+</html>
