@@ -1,8 +1,8 @@
 #youVsComputer { float: left; font-size: 20px }
 #giveFont {font-family: FontAwesome;}
-#rock {font-size: 15px;}
-#paper {font-size: 15px;}
-#scissors {font-size: 15px;}
+#rock {font-size: 30px;}
+#paper {font-size: 30px;}
+#scissors {font-size: 30px;}
 #compVsComp {float: right}
 #homeImg {height: 40%; width: 100%;}
 #minion {height: 30%; width: auto}
