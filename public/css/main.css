@@ -1,12 +1,12 @@
-#youVsComputer { float: left}
+#youVsComputer { float: left;}
 #giveFont {font-family: FontAwesome;}
 #compVsComp {float: right}
 #homeImg {height: 70%; width: 100%;}
 #minion {height: 60%; width: auto}
-#option {height: 30%; width: auto}
+#option {height: 30%; width: auto; transform: rotateY(180deg)}
 #optionComp {height: 30%; width: auto}
 #replay, #startGame {display: block; margin:auto;}
 body{background: url(/images/background2.jpg)}
-#playerNameInput {align-self: auto; width: 30%}
+#playerNameInput {align-self: auto; width: 30% ; }
 th, td {text-align: center}
 .jumbotron.leftSide, .jumbotron.centerSide, .jumbotron.rightSide {height: 50%; width: auto}
