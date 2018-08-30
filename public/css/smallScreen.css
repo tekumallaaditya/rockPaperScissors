@@ -1,9 +1,9 @@
-#youVsComputer { float: left; font-size: 20px }
+#youVsComputer { float: left; font-size: 120% }
 #giveFont {font-family: FontAwesome;}
 #rock {font-size: 16px}
 #paper { font-size: 16px}
 #scissors { font-size: 16px}
-#compVsComp {float: right}
+#compVsComp {float: right ; font-size: 120% }
 #homeImg {height: 40%; width: 100%;}
 #minion {height: 30%; width: auto}
 #option {height: 30%; width: auto; transform: rotateY(180deg)}

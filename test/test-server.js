@@ -31,12 +31,10 @@ describe('routing', function(){
     });
 
     it('getName', function(done){
-        request('http://localhost:8080/getName', function(err, res, body){
-            expect(res.statusCode).to.equal(200);
-            done();    
-        });
-        
-    });
+        request(app).post('/goToHome').send({playerName : 'testName'}).expect(200);        
+        done();  
+    });      
+    
    
 });
 

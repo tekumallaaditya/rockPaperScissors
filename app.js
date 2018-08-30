@@ -29,3 +29,5 @@ app.get('/gotoCompVsComp', routesAPI.gotoCompVsComp);
 app.listen(port, function(){
     console.log('server is up and running on port ' + port);
 });
+
+exports.app = app;

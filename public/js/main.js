@@ -80,11 +80,14 @@ function winner(playerMove, compMove){
     console.log('inside the winner function' + playerScore + compScore );
     if((playerMove == 'rock' && compMove == 'scissors') || (playerMove == 'paper' && compMove == 'rock') || (playerMove == 'scissors' && compMove == 'paper')){
         playerScore = playerScore + 1;
+        $('#roundWinner').show().html('<h4>You are the winner of this round</h4>');
         return 'player is the winner';
     } else if((playerMove == 'rock' && compMove == 'rock') || (playerMove == 'paper' && compMove == 'paper') || (playerMove == 'scissors' && compMove == 'scissors')){
+        $('#roundWinner').show().html('<h4>This round is a tie</h4>');
         return 'it is a tie';
     } else if((playerMove == 'rock' && compMove == 'paper') || (playerMove == 'paper' && compMove == 'scissors') || (playerMove == 'scissors' && compMove == 'rock')){
         compScore = compScore +1;
+        $('#roundWinner').show().html('<h4>Comp is the winner of this round</h4>');
         return 'comp is the winner';
     }
 }
@@ -98,8 +101,8 @@ function roundCount(round, playerScore, compScore){
     if(round == 10){
         console.log('inside the roundCount function');        
         if (playerScore > compScore){
-            
-            $('div#roundLabel').text( playerName + ' is the winner');
+            $('#roundWinner').hide();
+            $('div#roundLabel').html('<h3>'+ playerName + ' is the final winner</h3>');
             $('button#rock').attr('disabled', 'disabled');
             $('button#paper').attr('disabled', 'disabled');
             $('button#scissors').attr('disabled', 'disabled');
@@ -108,7 +111,8 @@ function roundCount(round, playerScore, compScore){
             
             
         } else if(playerScore == compScore){
-            $('#roundLabel').text( 'Its a Tie');
+            $('#roundWinner').hide();
+            $('#roundLabel').html( '<h3>Game ends in a Tie</h3>');
             $('button#rock').attr('disabled', 'disabled');
             $('button#paper').attr('disabled', 'disabled');
             $('button#scissors').attr('disabled', 'disabled');            
@@ -117,7 +121,8 @@ function roundCount(round, playerScore, compScore){
             
                   
         } else{
-            $('#roundLabel').text( 'Comp is the winner');
+            $('#roundWinner').hide();
+            $('#roundLabel').html( '<h3>Comp is the final winner</h3>');
             $('button#rock').attr('disabled', 'disabled');
             $('button#paper').attr('disabled', 'disabled');
             $('button#scissors').attr('disabled', 'disabled');            

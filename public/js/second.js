@@ -49,10 +49,12 @@ function winner(){
     console.log('inside the winner function' + comp1Score + comp2Score );
     if((comp1Move == 'rock' && comp2Move == 'scissors') || (comp1Move == 'paper' && comp2Move == 'rock') || (comp1Move == 'scissors' && comp2Move == 'paper')){
         comp1Score = comp1Score + 1;
+        $('#roundWinner').show().html('<h4>Comp 1 is the winner of this round</h4>');
     } else if((comp1Move == 'rock' && comp2Move == 'rock') || (comp1Move == 'paper' && comp2Move == 'paper') || (comp1Move == 'scissors' && comp2Move == 'scissors')){
-        //do nothing
+        $('#roundWinner').show().html('<h4>This round ends in a tie</h4>');
     } else if((comp1Move == 'rock' && comp2Move == 'paper') || (comp1Move == 'paper' && comp2Move == 'scissors') || (comp1Move == 'scissors' && comp2Move == 'rock')){
         comp2Score = comp2Score +1;
+        $('#roundWinner').show().html('<h4>Comp 2 is the winner of this round</h4>');
     }
 }
 
@@ -101,16 +103,18 @@ function roundCount(){
         console.log('inside the roundCount function');
         //$('#roundLabel').hide();
         if (comp1Score > comp2Score){
-            
-            $('#roundLabel').text( ' Comp 1 is the winner');            
+            $('#roundWinner').hide();
+            $('#roundLabel').html( '<h3>Comp 1 is the final winner</h3>');           
             $('#replay').show();
             
         } else if(comp1Score == comp2Score){
-            $('#roundLabel').text( 'Its a Tie');                       
+            $('#roundWinner').hide();
+            $('#roundLabel').html('<h3>Game ends in a Tie</h3>');                       
             $('#replay').show();
                   
         } else{
-            $('#roundLabel').text( 'Comp 2 is the winner');                       
+            $('#roundWinner').hide();
+            $('#roundLabel').html( '<h3>Comp 2 is the final winner</h3>');                     
             $('#replay').show();
         }       
         
