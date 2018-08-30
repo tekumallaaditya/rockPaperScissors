@@ -1,22 +1,25 @@
 var expect  = require('chai').expect;
+var chai = require('chai');
+var chaiHttp = require('chai-http');
 var request = require('request');
 var app = require('../app');
 var main = require('../public/js/main');
 var assert  = require('chai').assert;
 var express = require('express');
 var main = require('../public/js/main');
+chai.use(chaiHttp);
 
 describe('routing', function(){
     it('home page', function(done){
         request('http://localhost:8080/', function(err, res, body){
-            expect(res.statusCode).to.equal(200);
+            expect(res.statusCode).to.equal(200)
             done();
         });
     });
 
     it('gotoCompVsComp', function(done){
         request('http://localhost:8080/gotoCompVsComp', function(err, res, body){
-            expect(res.statusCode).to.equal(200); 
+            expect(res.statusCode).to.equal(200)
             done();           
         });
         
@@ -24,21 +27,18 @@ describe('routing', function(){
 
     it('goToHome', function(done){
         request('http://localhost:8080/goToHome', function(err, res, body){
-            expect(res.statusCode).to.equal(200);  
+            expect(res.statusCode).to.equal(200)
             done();          
         });
         
     });
 
-    it('getName', function(done){
-        request(app).post('/goToHome').send({playerName : 'testName'}).expect(200);        
-        done();  
-    });      
+        
     
    
 });
 
-describe('testing min.js', function(){
+describe('testing external js', function(){
     before(() => {
         const { JSDOM } = require("jsdom"); 
         const myJSDom = new JSDOM ();

@@ -13,14 +13,10 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 
-
-
-
 port = process.env.PORT || 8080;
 
 
 app.get('/', routesAPI.home);
-
 app.post('/getName', routesAPI.getName);
 app.get('/goToHome', routesAPI.goHome);
 app.get('/gotoCompVsComp', routesAPI.gotoCompVsComp);
@@ -30,4 +26,3 @@ app.listen(port, function(){
     console.log('server is up and running on port ' + port);
 });
 
-exports.app = app;

@@ -80,7 +80,7 @@ function winner(playerMove, compMove){
     console.log('inside the winner function' + playerScore + compScore );
     if((playerMove == 'rock' && compMove == 'scissors') || (playerMove == 'paper' && compMove == 'rock') || (playerMove == 'scissors' && compMove == 'paper')){
         playerScore = playerScore + 1;
-        $('#roundWinner').show().html('<h4>You are the winner of this round</h4>');
+        $('#roundWinner').show().html('<h4>You are the winner of this round</h4>');        
         return 'player is the winner';
     } else if((playerMove == 'rock' && compMove == 'rock') || (playerMove == 'paper' && compMove == 'paper') || (playerMove == 'scissors' && compMove == 'scissors')){
         $('#roundWinner').show().html('<h4>This round is a tie</h4>');
@@ -102,6 +102,9 @@ function roundCount(round, playerScore, compScore){
         console.log('inside the roundCount function');        
         if (playerScore > compScore){
             $('#roundWinner').hide();
+            $('#heading').hide();
+            $('#scoreboard').hide();
+            $('#winnerIMG').show().attr('src', '/images/winnerPlayer.gif' );
             $('div#roundLabel').html('<h3>'+ playerName + ' is the final winner</h3>');
             $('button#rock').attr('disabled', 'disabled');
             $('button#paper').attr('disabled', 'disabled');
@@ -122,7 +125,10 @@ function roundCount(round, playerScore, compScore){
                   
         } else{
             $('#roundWinner').hide();
-            $('#roundLabel').html( '<h3>Comp is the final winner</h3>');
+            $('#heading').hide();
+            $('#scoreboard').hide();
+            $('#winnerIMG').show().attr('src', '/images/loserPlayer.gif' );
+            $('#roundLabel').html( '<h3>YOU LOST!!!</h3>');
             $('button#rock').attr('disabled', 'disabled');
             $('button#paper').attr('disabled', 'disabled');
             $('button#scissors').attr('disabled', 'disabled');            
